@@ -156,4 +156,9 @@ class EmployeeTest {
     @org.junit.jupiter.api.Timeout(value = 1000, unit = NANOSECONDS)
     public void setEmpName(){
     }
+
+    @org.junit.jupiter.api.Test
+    void getEmpName() {
+        org.junit.jupiter.api.Assertions.fail("Make it fail intentionally");
+    }
 }
