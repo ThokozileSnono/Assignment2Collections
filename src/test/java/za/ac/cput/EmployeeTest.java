@@ -16,6 +16,43 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmployeeTest {
 
     @org.junit.jupiter.api.Test
+    public void collectionAdd() {
+        Collection<Employee> collectionEmp1 = new HashSet<>();
+
+        collectionEmp1.add(new Employee("554", "Widge", 25));
+        collectionEmp1.add(new Employee("765", "Sproket", 27));
+        collectionEmp1.add(new Employee("678", "Gadget", 22));
+
+        assertEquals(3, collectionEmp1.size());
+    }
+
+    @org.junit.jupiter.api.Test
+    public void collectionRemove() {
+        Collection<Employee> collectionEmp2 = new HashSet<>();
+
+        collectionEmp2.add(new Employee("554", "Widge", 25));
+        collectionEmp2.add(new Employee("765", "Sproket", 27));
+        collectionEmp2.add(new Employee("678", "Gadget", 22));
+
+        collectionEmp2.remove(new Employee("765", "Sproket", 27));
+
+        assertEquals(2, collectionEmp2.size());
+    }
+
+    @org.junit.jupiter.api.Test
+    public void collectionFind() {
+        Collection<Employee> collectionEmp3 = new HashSet<>();
+
+        collectionEmp3.add(new Employee("554", "Widge", 25));
+        collectionEmp3.add(new Employee("765", "Sproket", 27));
+        collectionEmp3.add(new Employee("678", "Gadget", 22));
+
+        System.out.println(collectionEmp3.toString());
+
+        assertEquals(25,25);
+    }
+
+    @org.junit.jupiter.api.Test
     public void listAdd() {
         // store only string objects
         ArrayList< Employee > list1 = new ArrayList<>();
