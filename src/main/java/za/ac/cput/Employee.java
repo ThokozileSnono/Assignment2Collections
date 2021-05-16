@@ -1,11 +1,35 @@
 package za.ac.cput;
 
+/*
+ * @Author: Thokozile Snono
+ * Student number: 216032121
+ * Date: 16 May 2021
+ * This is the Employee class
+ */
+
+import java.util.Objects;
+
 public class Employee {
     private String empName;
     private String empSurname;
-    private String empNumber;
 
-    public Employee(String empName, String empSurname, String empNumber) {
+    public Employee(int empNumber, String empName) {
+        this.empName = empName;
+        this.empNumber = empNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(empNumber);
+    }
+
+    private int empNumber;
+
+    public Employee(String empSurname){
+
+    }
+
+    public Employee(String empName, String empSurname, int empNumber) {
         this.empName = empName;
         this.empSurname = empSurname;
         this.empNumber = empNumber;
@@ -19,7 +43,7 @@ public class Employee {
         empSurname = snm;
     }
 
-    public void setNumber(String num){
+    public void setNumber(int num){
         empNumber = num;
     }
 
@@ -31,12 +55,20 @@ public class Employee {
         return empSurname;
     }
 
-    public String getNumber(){
+    public int getNumber(){
         return empNumber;
     }
 
     @Override
     public String toString() {
-        return "Employees{" + "empName=" + empName + ", empSurname=" + empSurname + ", empNumber=" + empNumber + '}';
+        return "Employees{" + "\n empName=" + empName + ", empSurname=" + empSurname + ", empNumber=" + empNumber + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return empNumber == employee.empNumber;
     }
 }
